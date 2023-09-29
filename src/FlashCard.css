@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  border: solid 1px #20c20e;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s; /* Add transition for smooth flip animation */
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 5px #00ff00; /* Apply the green box shadow */
+}
+
+.card.flipped {
+  transform: rotateX(180deg); /* Flip vertically along the X-axis */
+}
+
+.card div {
+  position: absolute;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  padding: 1rem;
+}
+
+.front,
+.back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  transform: rotateX(180deg); /* Initially show the front side */
+}
